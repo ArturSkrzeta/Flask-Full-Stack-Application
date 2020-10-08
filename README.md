@@ -43,8 +43,8 @@
   </li>
   <li>Quering db with filters:
     <br>
-    - e = ExerciseSet.query.filter_by(name='B').all()<br>
-    - e = ExerciseSet.query.filter_by(name='B').all()[-1] # getting last item<br>
+    > e = ExerciseSet.query.filter_by(name='B').all()<br>
+    > e = ExerciseSet.query.filter_by(name='B').all()[-1] # getting last item<br>
   </li>
 </ul>
 
