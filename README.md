@@ -47,7 +47,7 @@
 <ul>
   <li>Directory 'application' with __init__.py defined becomes python module.</li>
   <li>In __init__.py, I create app instance.</li>
-  <li>I can import from it then: from application import app.</li>
+  <li>I can import from it then: <b>from application import app</b> as if <b>from application.__init__.py import app</b>.</li>
   <br>
   <img src="images/init_app.JPG">
 </ul>
