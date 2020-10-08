@@ -59,7 +59,7 @@
   <br>
   <br>
   <li>Running Flask server with <b>python run.py</b></li>
-  <li>Creating db having project structured:</li>
+  <li>Creating model instance = table row, we need to provide <b>keyword arguments</b>:</li>
   <br>
   <img src="images/interpreter.JPG">
   <br>
