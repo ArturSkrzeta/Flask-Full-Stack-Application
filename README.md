@@ -43,3 +43,10 @@
   </li>
 </ul>
 
+<h3>Package Structure</h3>
+<ul>
+  <li></li>
+  <br>
+  <br>
+  <img src="images/init_app.JPG">
+</ul>
