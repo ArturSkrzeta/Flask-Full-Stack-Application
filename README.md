@@ -45,8 +45,7 @@
 
 <h3>Package Structure</h3>
 <ul>
-  <li></li>
-  <br>
+  <li>Application directory with __init__.py defined becomes python module:</li>
   <br>
   <img src="images/init_app.JPG">
 </ul>
