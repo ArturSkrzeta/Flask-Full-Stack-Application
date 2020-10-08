@@ -55,6 +55,5 @@
   <br>
   <li>Project structre:</li>
   <br>
-  <br>
   <img src="images/tree.JPG">
 </ul>
