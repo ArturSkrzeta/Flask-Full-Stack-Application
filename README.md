@@ -24,14 +24,14 @@
   <li>In Python interpreter (project directory):
     <br>
     > from main import db<br>
-    > db.create_all()
-    > from main import ExerciseSet
-    > set1 = ExerciseSet('Bench Press', 80, 6)
-    > set2 = ExerciseSet('Bench Press', 90, 5)
-    > set3 = ExerciseSet('Bench Press', 100, 3)
-    > db.session.add(set1)
-    > db.session.add(set2)
-    > db.session.add(set3)
+    > db.create_all()<br>
+    > from main import ExerciseSet<br>
+    > set1 = ExerciseSet('Bench Press', 80, 6)<br>
+    > set2 = ExerciseSet('Bench Press', 90, 5)<br>
+    > set3 = ExerciseSet('Bench Press', 100, 3)<br>
+    > db.session.add(set1)<br>
+    > db.session.add(set2)<br>
+    > db.session.add(set3)<br>
     > db.session.commit()
   </li>
 </ul>
