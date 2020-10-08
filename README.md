@@ -16,10 +16,10 @@
   </li>
   <li>In app:
     <br>
-    > app = Flask(__name__)
-    > from flask_sqlalchemy import SQLAlchemy
-    > app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' # /// indicates relative path of a project - db will be created in main directory 
-    > db = SQLAlchemy(app)
+    > app = Flask(__name__)<br>
+    > from flask_sqlalchemy import SQLAlchemy<br>
+    > app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' # /// indicates relative path of a project - db will be created in main directory<br> 
+    > db = SQLAlchemy(app)<br>
   </li>
 </ul>
 
