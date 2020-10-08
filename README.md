@@ -52,6 +52,9 @@
   <br>
   <img src="images/init_app.JPG">
   <br>
+  <br>
   <li>Project structre:</li>
+  <br>
+  <br>
   <img src="images/tree.JPG">
 </ul>
