@@ -59,11 +59,9 @@
   <br>
   <br>
   <li>Running Flask server with <b>python run.py</b></li>
-  <li>Creating db having project structured:
-    <br>
-    - from application import db<br>
-    - from application.models import ExerciseSet<br>
-    - db.create_all()<br>
-    - ExerciseSet.query.all() # returns []<br>
-  </li>
+  <li>Creating db having project structured:</li>
+  <br>
+  <img src="images/interpreter.JPG">
+  <br>
+  <br>
 </ul>
