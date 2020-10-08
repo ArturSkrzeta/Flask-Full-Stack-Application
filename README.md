@@ -41,6 +41,11 @@
     > bench.weight<br>
     > db.drop_all() # drops all db's tables
   </li>
+  <li>Quering db with filters:
+    <br>
+    - e = ExerciseSet.query.filter_by(name='B').all()<br>
+    - e = ExerciseSet.query.filter_by(name='B').all()[-1] # getting last item<br>
+  </li>
 </ul>
 
 <h3>Package Structure</h3>
