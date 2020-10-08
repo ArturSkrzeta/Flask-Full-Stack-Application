@@ -51,4 +51,7 @@
   <li>Any other modules from 'application' package can be iumported according to: <b>from package.module import class</b> -> <b>from application.models import MyModel</b>.</li>
   <br>
   <img src="images/init_app.JPG">
+  <br>
+  <li>Project structre:</li>
+  <img src="images/tree.JPG">
 </ul>
