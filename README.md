@@ -26,9 +26,9 @@
     > from main import db<br>
     > db.create_all()<br>
     > from main import ExerciseSet<br>
-    > set1 = ExerciseSet('Bench Press', 80, 6)<br>
-    > set2 = ExerciseSet('Bench Press', 90, 5)<br>
-    > set3 = ExerciseSet('Bench Press', 100, 3)<br>
+    > set1 = ExerciseSet(name='Bench Press', weight=80, reps=6)<br>
+    > set2 = ExerciseSet(name='Bench Press', weight=90, reps=5)<br>
+    > set3 = ExerciseSet(name='Bench Press', weight=100, reps=3)<br>
     > db.session.add(set1)<br>
     > db.session.add(set2)<br>
     > db.session.add(set3)<br>
