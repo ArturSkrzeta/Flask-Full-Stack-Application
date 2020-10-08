@@ -32,7 +32,13 @@
     > db.session.add(set1)<br>
     > db.session.add(set2)<br>
     > db.session.add(set3)<br>
-    > db.session.commit()
+    > db.session.commit()<br>
+    > ExerciseSet.query.all()<br>
+    > ExerciseSet.query.first()<br>
+    > ExerciseSet.query.filter_by(name='Bench Press').all()<br>
+    > bench = ExerciseSet.query.filter_by(name='Bench Press').first()<br>
+    > ex1 = ExerciseSet.query.get(1)<br>
+    > bench.weight
   </li>
 </ul>
 
