@@ -1,4 +1,4 @@
-<h2>?Flask Full Stack Application</h2>
+<h2>Flask Full Stack Application</h2>
 
 <h3>Intro</h3>
 <ul>
