@@ -45,7 +45,9 @@
 
 <h3>Package Structure</h3>
 <ul>
-  <li>Application directory with __init__.py defined becomes python module:</li>
+  <li>Directory 'application' with __init__.py defined becomes python module.</li>
+  <li>In __init__.py, I create app instance.</li>
+  <li>I can import from it then: from application import app.</li>
   <br>
   <img src="images/init_app.JPG">
 </ul>
