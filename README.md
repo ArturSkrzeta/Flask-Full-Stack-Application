@@ -38,7 +38,7 @@
     > ExerciseSet.query.filter_by(name='Bench Press').all()<br>
     > bench = ExerciseSet.query.filter_by(name='Bench Press').first()<br>
     > ex1 = ExerciseSet.query.get(1)<br>
-    > bench.weight
+    > bench.weight<br>
     > db.drop_all() # drops all db's tables
   </li>
 </ul>
