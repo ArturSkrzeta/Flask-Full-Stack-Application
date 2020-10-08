@@ -58,5 +58,5 @@
   <img src="images/tree.JPG">
   <br>
   <br>
-  <li>Running Flask server with python run.py</li>
+  <li>Running Flask server with <b>python run.py</b></li>
 </ul>
