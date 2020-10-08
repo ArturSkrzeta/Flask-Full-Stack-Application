@@ -56,4 +56,7 @@
   <li>Project structre:</li>
   <br>
   <img src="images/tree.JPG">
+  <br>
+  <br>
+  <li>Running Flask server with python run.py</li>
 </ul>
