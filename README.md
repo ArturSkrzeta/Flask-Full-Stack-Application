@@ -73,9 +73,12 @@
   <img src="images/interpreter.JPG">
   <br>
   <br>
-  <li>filter_by witg multiple criterias
+  <li>filter_by witg multiple criterias:
     <br>
     - set.query.filter_by(week=1, name="Squat").first().w
   </li>
-  <li></li>
+  <li>Taking last item:
+    <br>
+    - set.query.filter_by(name='Bench Press').all()[-1].w
+  </li>
 </ul>
