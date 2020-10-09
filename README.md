@@ -64,9 +64,18 @@
   <br>
   <br>
   <li>Running Flask server with <b>python run.py</b></li>
+</ul>
+
+<h3>SQLALchemy</h3>
+<ul>
   <li>Creating model instance = table row, we need to provide <b>keyword arguments</b>:</li>
   <br>
   <img src="images/interpreter.JPG">
   <br>
   <br>
+  <li>filter_by witg multiple criterias
+    <br>
+    - set.query.filter_by(week=1, name="Squat").first().w
+  </li>
+  <li></li>
 </ul>
