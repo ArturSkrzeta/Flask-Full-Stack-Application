@@ -96,7 +96,12 @@
   <li>Validators for validation are imported from wtforms.validators:
     <br>
     - from wtforms.validators import DataRequired, Length<br>
-    - username = StringField('Username', validators=[DataRequired(), Length(min=2,max=20)])
-  
+    - username = StringField('Username', validators=[DataRequired(), Length(min=2,max=20)])<br>
+    - first argument is the html label
+  </li>
+  <li>Submit button
+    <br>
+    - from wtforms import SubmitField<br>
+    - submit = SubmitField('Submit')
   </li>
 </ul>
