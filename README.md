@@ -73,12 +73,30 @@
   <img src="images/interpreter.JPG">
   <br>
   <br>
-  <li>filter_by witg multiple criterias:
+  <li>filter_by with multiple criterias:
     <br>
     - set.query.filter_by(week=1, name="Squat").first().w
   </li>
   <li>Taking last item:
     <br>
     - set.query.filter_by(name='Bench Press').all()[-1].w
+  </li>
+</ul>
+
+<h3>Forms</h3>
+<ul>
+  <li>Library installation: pip install flask-wtf.</li>
+  <li>Python import: from flask_wtf import FlaskForm.</li>
+  <li>Python classes are representative of forms. They will be automatically converted into HTML forms within a template.</li>
+  <li>Form fileds are imported from wtforms:
+    <br>
+    - from wtforms import StringField<br>
+    - username = StringField()
+  </li>
+  <li>Validators for validation are imported from wtforms.validators:
+    <br>
+    - from wtforms.validators import DataRequired, Length<br>
+    - username = StringField('Username', validators=[DataRequired(), Length(min=2,max=20)])
+  
   </li>
 </ul>
