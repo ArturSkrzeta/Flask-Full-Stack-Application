@@ -109,8 +109,13 @@
     - from wtforms import BooleanField<br>
     - remember = BooleanField('Remember Me')
   </li>
-  <li>
+  <li>Dropdown field:
     <br>
-    - 
+    - from wtforms import SelectField
+    - name = SelectField('Exercise Name', choices=['Bench Press','Deadlift','Squat'])
+  </li>
+  <li>Importing form into routes
+    <br>
+    <img src="images/froms_in_routes.JPG">
   </li>
 </ul>
