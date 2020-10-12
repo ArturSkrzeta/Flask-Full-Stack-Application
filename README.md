@@ -104,9 +104,13 @@
     - from wtforms import SubmitField<br>
     - submit = SubmitField('Submit')
   </li>
-  <li>Bolean button:
+  <li>Bolean field:
     <br>
     - from wtforms import BooleanField<br>
     - remember = BooleanField('Remember Me')
+  </li>
+  <li>
+    <br>
+    - 
   </li>
 </ul>
