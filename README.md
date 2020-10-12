@@ -116,6 +116,6 @@
   </li>
   <li>Importing form into routes
     <br>
-    <img src="images/froms_in_routes.JPG">
+    <img src="images/forms_in_routes.JPG">
   </li>
 </ul>
