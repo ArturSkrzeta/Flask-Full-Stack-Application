@@ -116,6 +116,11 @@
   </li>
   <li>Importing form into routes
     <br>
+    <br>
     <img src="images/forms_in_routes.JPG">
+    <br>
+    - function needs to accept both GET and POSTS requests<br>
+    - redirecting to function that contains template where we want to direct to<br>
+    - instanciation of form within a function along with db commiting
   </li>
 </ul>
