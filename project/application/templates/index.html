@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Powerlifting Progress Tracker</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+	</head>
+	<body>
+
+			<!-- Nav -->
+				<nav id="nav">
+					<a href="#">Dashboard</a>
+					<a href="#total">Training</a>
+					<a href="#diet">Diet</a>
+					<a href="#form">Form</a>
+				</nav>
+
+			<!-- Main -->
+				<div id="main">
+
+					<article id="home" class="panel">
+
+							<div class="row" style="margin-top:5px;">
+
+									<div class="col-4 col-6-medium col-12-small">
+										<h4 style="padding:10px 0px 0px 25px;">Deadlift</h4>
+										<small>week to week</small>
+
+										{% if set.query.filter_by(name='Deadlift').all()[-1].w > set.query.filter_by(name='Deadlift').all()[-2].w %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #15b85e;">
+										{% else %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #f62f38;">
+										{% endif %}
+												{{ set.query.filter_by(name='Deadlift').all()[-1].w }} kg
+											</p>
+
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+										<h4 style="padding:10px 0px 0px 25px;">Squat</h4>
+										<small>week to week</small>
+
+										{% if set.query.filter_by(name='Squat').all()[-1].w > set.query.filter_by(name='Squat').all()[-2].w %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #15b85e">
+										{% else %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #f62f38">
+										{% endif %}
+												{{ set.query.filter_by(name='Squat').all()[-1].w }} kg
+											</p>
+
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+										<h4 style="padding:10px 0px 0px 25px;">Bench Press</h4>
+										<small>week to week</small>
+
+										{% if set.query.filter_by(name='Bench Press').all()[-1].w > set.query.filter_by(name='Bench Press').all()[-2].w %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #15b85e;">
+										{% else %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #f62f38;">
+										{% endif %}
+												{{ set.query.filter_by(name='Bench Press').all()[-1].w }} kg
+											</p>
+
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+										<h4 style="padding:10px 0px 0px 25px;">Total</h4>
+										<small>week to week</small>
+
+										{% if
+										set.query.filter_by(name='Bench Press').all()[-1].w +
+										set.query.filter_by(name='Squat').all()[-1].w +
+										set.query.filter_by(name='Deadlift').all()[-1].w >
+										set.query.filter_by(name='Bench Press').all()[-2].w +
+										set.query.filter_by(name='Squat').all()[-2].w +
+										set.query.filter_by(name='Deadlift').all()[-2].w %}
+
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #15b85e;">
+										{% else %}
+											<p style="margin:0; padding:50px 0px 0px 35px; font-size: 60px; color: #f62f38;">
+										{% endif %}
+												{{ set.query.filter_by(name='Bench Press').all()[-1].w +
+												set.query.filter_by(name='Squat').all()[-1].w +
+												set.query.filter_by(name='Deadlift').all()[-1].w }} kg
+											</p>
+
+
+
+									</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="chart" style="padding:10px 0px 0px 25px;">
+									<h4>Progress Weekly</h4>
+									<section class="chart-area">
+										<div class="box">
+
+											{% for i in range(1,set.query.filter_by(name="Bench Press").all()[-1].week + 1) %}
+
+												<div class="item">
+													<div class="graph" style="height:{{ (set.query.filter_by(week=i, name='Bench Press').first().w +
+																																set.query.filter_by(week=i, name='Squat').first().w +
+																																set.query.filter_by(week=i, name='Deadlift').first().w) / 500 * 100  }}%;
+
+																																{%  if i == 1 %}
+
+																																	background-color: #15b85e;
+
+																																{% elif
+																																set.query.filter_by(week=i, name='Bench Press').first().w +
+																																set.query.filter_by(week=i, name='Squat').first().w +
+																																set.query.filter_by(week=i, name='Deadlift').first().w >
+																																set.query.filter_by(week=i-1, name='Bench Press').first().w +
+																																set.query.filter_by(week=i-1, name='Squat').first().w +
+																																set.query.filter_by(week=i-1, name='Deadlift').first().w %}
+
+																																	background-color: #15b85e;
+
+																																{% else %}
+
+																																	background-color: #f62f38;
+
+																																{% endif %}
+
+																																">
+
+														<div class="percent">
+															{{ set.query.filter_by(week=i, name='Bench Press').first().w +
+															set.query.filter_by(week=i, name='Squat').first().w  +
+															set.query.filter_by(week=i, name='Deadlift').first().w  }}
+														</div>
+
+													</div>
+													<div class="name">{{ set.query.filter_by(week=i, name='Bench Press').first().week }}</div>
+												</div>
+
+											{% endfor %}
+
+										</div>
+									</section>
+								</div>
+
+
+
+								<div class="col-4 col-6-medium col-12-small" style="background:transparent;">
+									<div style="width:100%; height:145px; background-color: #303241; border-radius: 10px;">
+										<h4 style="padding:10px 0px 0px 25px;">Body Weight</h4>
+										<p style="margin:0; padding:25px 0px 0px 35px; font-size: 40px; color: #d3d3d3;">85.0 kg</p>
+									</div>
+
+									<div style="width:100%; height:145px; background-color: #303241; border-radius: 10px; margin-top: 40px;">
+										<h4 style="padding:10px 0px 0px 25px;">Body Height</h4>
+										<p style="margin:0; padding:25px 0px 0px 35px; font-size: 40px; color: #d3d3d3;">1.75 m</p>
+									</div>
+								</div>
+
+
+
+								<div class="col-4 col-6-medium col-12-small">
+									<h4 style="padding:10px 0px 0px 25px;">Target</h4>
+									<small>month to month</small>
+									<div class="card">
+										<div class="box2">
+											<div class="percent2">
+												<svg>
+													<circle cs="70" cy="70" r="70"></circle>
+													<circle cs="70" cy="70" r="70" style="stroke-dashoffset:
+																																calc(440 * {{ 1 - (set.query.filter_by(week=last_week, name='Bench Press').first().w +
+																																set.query.filter_by(week=last_week, name='Squat').first().w +
+																																set.query.filter_by(week=last_week, name='Deadlift').first().w) / 500 }} );">
+													</circle>
+												</svg>
+												<div class="number">
+													<p style="color:#d3d3d3; font-size:1.6em; margin:0;">
+														{{ (set.query.filter_by(week=last_week, name='Bench Press').first().w +
+														set.query.filter_by(week=last_week, name='Squat').first().w +
+														set.query.filter_by(week=last_week, name='Deadlift').first().w) / 500 * 100 }} %
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+					</article>
+
+					<!-- Work -->
+						<article id="total" class="panel">
+							<header>
+								<h2>Work</h2>
+							</header>
+
+							<section>
+								<div class="row">
+
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image fit">xxx</a>
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image fit">yyy</a>
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image fit">zzz</a>
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+
+									</div>
+
+									<div class="col-4 col-6-medium col-12-small">
+
+									</div>
+
+								</div>
+							</section>
+						</article>
+
+				<!-- Diet -->
+					<article id="diet" class="panel">
+							<div class="row">
+
+								<div class="col-4 col-6-medium col-12-small">
+									<p style="text-align: center;">Deadlift</p>
+								</div>
+
+								<div class="col-4 col-6-medium col-12-small">
+									<p style="text-align: center;">Squat</p>
+								</div>
+
+								<div class="col-4 col-6-medium col-12-small">
+									<p style="text-align: center;">Bench Press</p>
+								</div>
+
+							</div>
+					</article>
+
+					<!-- Form -->
+						<article id="form" class="panel">
+							<div class="training-form" style="max-width: 40%; margin: 40px 0 0 80px;">
+								<h2 style="color:#ffff; font-weight:100; margin-bottom:30px;">Enter Your Training Set</h2>
+								<form action="#" method="post">
+
+									{{ form.week.label(class="form-label") }}
+									{{ form.week(class="col-12", autocomplete="off", value=last_week + 1) }}
+
+									{{ form.deadlift.label(class="form-label") }}
+									{{ form.deadlift(class="col-12", autocomplete="off") }}
+
+									{{ form.squat.label(class="form-label") }}
+									{{ form.squat(class="col-12", autocomplete="off") }}
+
+									{{ form.bench_press.label(class="form-label") }}
+									{{ form.bench_press(class="col-12", autocomplete="off") }}
+
+									{{ form.submit(class="col-12") }}
+
+							</form>
+						</div>
+
+						</article>
+
+				</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='util.js') }}"></script>
+			<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+	</body>
+</html>
